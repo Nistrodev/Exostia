@@ -12,8 +12,12 @@ database:
 # Discord Webhook
 webhookURL: "https://discord.com/api/webhooks/1235166619232112671/zIUozwi2qLghBunh3vtnAVuiidb_P1ERT4IKJUJ1IsA_KKSsfPERXFGatEuGH9BnOxto"
 
-# Join / Leave
+# Welcome
 maxTimeToWelcome: 60
+
+# Rewards
+rewards:
+  welcome: 100
 
 permission_prefix:
   Admin:
@@ -76,8 +80,11 @@ messages:
   noNewPlayer: "§cIl n'y a pas de nouveaux joueurs à accueillir"
   tooLateToWelcome: "§cTrop tard pour accueillir %player%"
   cantWelcomeYourself: "§cVous ne pouvez pas vous accueillir vous-même"
+  welcomeReward: "§aVous avez reçu %reward% pour avoir accueilli %player%"
+  welcomeRewardError: "§cUne erreur est survenue lors de l'ajout de la récompense"
 
 permissions:
+  welcome: "exostia.welcome"
   clear: "exostia.chat.clear"
   toggle: "exostia.chat.toggle"
   chatBypass: "exostia.chat.bypass"

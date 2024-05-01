@@ -14,6 +14,7 @@ import fr.nistro.exostia.listener.AsyncPlayerChatListener;
 import fr.nistro.exostia.listener.PlayerJoinListener;
 import fr.nistro.exostia.util.ConfigUtil;
 import fr.nistro.exostia.util.DatabaseUtil;
+import fr.nistro.exostia.util.VaultUtil;
 
 public class Main extends JavaPlugin {
 	
@@ -24,6 +25,12 @@ public class Main extends JavaPlugin {
     
     @Override
 	public void onEnable() {
+    	if (!VaultUtil.setupEconomy() ) {
+            this.getLogger().severe(String.format("Disabled due to no Vault dependency found!", this.getDescription().getName()));
+            this.getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+    	
         // Enregistrement des listeners
     	this.getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(), this);
     	this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
@@ -57,12 +64,11 @@ public class Main extends JavaPlugin {
 		}
     	
         this.getLogger().info("Plugin Exostia disabled !");
+        this.getLogger().info(String.format("[%s] Disabled Version %s", this.getDescription().getName(), this.getDescription().getVersion()));
     }
     
 	public static String getPrefix() {
 		return Main.prefix;
 	}
-	
-	
 
 }
