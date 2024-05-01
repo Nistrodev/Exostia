@@ -1,10 +1,10 @@
 name: Exostia
-version: 1.0.0
+version: 1.0.2
 author: Nistro
 description: Main plugin for Exostia server.
 main: fr.nistro.exostia.Main
 api: INVALID
-depend: [Vault]
+depend: [Vault, PlaceholderAPI]
 
 commands:
   chat:

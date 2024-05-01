@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.nistro.exostia.command.ChatCommand;
@@ -14,9 +15,9 @@ import fr.nistro.exostia.listener.AsyncPlayerChatListener;
 import fr.nistro.exostia.listener.PlayerJoinListener;
 import fr.nistro.exostia.util.ConfigUtil;
 import fr.nistro.exostia.util.DatabaseUtil;
-import fr.nistro.exostia.util.VaultUtil;
+import fr.nistro.exostia.util.DependenciesUtil;
 
-public class Main extends JavaPlugin {
+public class Main extends JavaPlugin implements Listener {
 	
     private Connection connection = null;
     public static String prefix;
@@ -25,11 +26,8 @@ public class Main extends JavaPlugin {
     
     @Override
 	public void onEnable() {
-    	if (!VaultUtil.setupEconomy() ) {
-            this.getLogger().severe(String.format("Disabled due to no Vault dependency found!", this.getDescription().getName()));
-            this.getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
+    	// Vérification des dépendances
+    	DependenciesUtil.checkDependencies();
     	
         // Enregistrement des listeners
     	this.getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(), this);
@@ -70,5 +68,4 @@ public class Main extends JavaPlugin {
 	public static String getPrefix() {
 		return Main.prefix;
 	}
-
 }

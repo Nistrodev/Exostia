@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
@@ -17,8 +18,9 @@ public class PlayerJoinListener implements Listener {
 	private static Player newPlayer;
 	private static Date firstJoin;
 
-	@EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
+        
         final UUID playerUUID = event.getPlayer().getUniqueId();
 
         if (!DatabaseUtil.getInstance().isPlayerRegistered(playerUUID)) {

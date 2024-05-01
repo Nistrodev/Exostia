@@ -8,8 +8,6 @@ import java.util.logging.Level;
 import org.apache.commons.lang.WordUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +19,7 @@ import fr.nistro.exostia.Main;
 import fr.nistro.exostia.command.ChatCommand;
 import fr.nistro.exostia.util.DiscordWebhookUtil;
 import fr.nistro.exostia.util.ReflectionUtil;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -41,23 +40,9 @@ public class AsyncPlayerChatListener implements Listener {
         
         // Gére les couleurs
         message = message.replace("&", "§");
-        
-        final FileConfiguration config = Bukkit.getPluginManager().getPlugin("Exostia").getConfig();
-        final ConfigurationSection permissionPrefixSection = config.getConfigurationSection("permission_prefix");
-
-        String prefixPlayer = config.getString("permission_prefix.Default.prefix");
-        
-        if (permissionPrefixSection != null) {
-            for (final String key : permissionPrefixSection.getKeys(false)) {
-                final String permission = permissionPrefixSection.getString(key + ".permission");
-                final String prefix = permissionPrefixSection.getString(key + ".prefix");
-                
-                if ((permission != null) && (prefix != null) && player.hasPermission(permission)) {
-                    prefixPlayer = prefix;
-                    break;
-                }
-            }
-        }
+		
+        // Récupère le préfixe du joueur
+        final String prefixPlayer = PlaceholderAPI.setPlaceholders(player, "%vault_prefix%").replace("&", "§");
         
         // Créer un textComponent pour reporter le message
         final TextComponent reportMessage = new TextComponent();
@@ -103,7 +88,7 @@ public class AsyncPlayerChatListener implements Listener {
             messageToSend.addExtra(messageAfterItem);
         } else {
             // Si le message ne contient pas [i], on ajoute simplement le message
-            messageToSend.addExtra(message);
+        	messageToSend.addExtra(message);
         }
 
         

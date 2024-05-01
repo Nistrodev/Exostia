@@ -18,16 +18,6 @@ maxTimeToWelcome: 60
 # Rewards
 rewards:
   welcome: 100
-
-permission_prefix:
-  Admin:
-    permission: "exostia.admin"
-    prefix: "§c[Admin] "
-  Moderator:
-      permission: "exostia.moderator"
-      prefix: "§2[Moderateur] "
-  Default:
-      prefix: "§7[Joueur] "
       
 # Report
 report:
@@ -61,6 +51,7 @@ messages:
   chatUsage: "§cUtilisation: /chat <clear|toggle>"
   chatDisabled: "§cLe chat a été désactivé par %player%"
   chatEnabled: "§aLe chat a été activé par %player%"
+  noMessage: "§cVous devez spécifier un message"
   welcome: "§aBienvenue sur le serveur %player%, tu es le joueur n°%playerCount% \n §7Souhaitez lui la bienvenue avec §a/bienvenue"
   welcomeMessages:
     - "§7Salut §a%player%§7! Nous sommes ravis de te voir ici."
