@@ -19,6 +19,10 @@ Exostia is a main plugin for the Exostia server.
 - AntiSwear with phrases replacement
 
   ![image](https://github.com/Nistrodev/Exostia/assets/109731762/67415673-90f8-492a-886c-040d035015ca)
+- Join/Leave message above action bar
+
+  ![327192748-49037469-f585-4cb9-95b4-ffe95bc4e3ec(1)](https://github.com/Nistrodev/Exostia/assets/109731762/b5357775-126e-4d64-80fe-b5cb5146289a)
+  ![327192627-8c2e678b-f8ef-49cc-8ca2-33397d8a5443(1)](https://github.com/Nistrodev/Exostia/assets/109731762/de642178-dee9-4374-b89d-47a15f222c33)
 
 
 ## Installation
