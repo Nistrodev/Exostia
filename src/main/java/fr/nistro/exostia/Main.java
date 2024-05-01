@@ -13,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.nistro.exostia.command.ChatCommand;
 import fr.nistro.exostia.command.WelcomeCommand;
 import fr.nistro.exostia.listener.PlayerJoinListener;
+import fr.nistro.exostia.listener.PlayerQuitListener;
 import fr.nistro.exostia.listener.PlayerChat.AsyncPlayerChatListener;
 import fr.nistro.exostia.util.ConfigUtil;
 import fr.nistro.exostia.util.DatabaseUtil;
@@ -35,6 +36,7 @@ public class Main extends JavaPlugin implements Listener {
         // Enregistrement des listeners
     	this.getServer().getPluginManager().registerEvents(new AsyncPlayerChatListener(), this);
     	this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+    	this.getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
     	
     	// Enregistrement des commandes
     	this.getCommand("chat").setExecutor(new ChatCommand());

@@ -73,6 +73,8 @@ messages:
   cantWelcomeYourself: "§cVous ne pouvez pas vous accueillir vous-même"
   welcomeReward: "§aVous avez reçu %reward% pour avoir accueilli %player%"
   welcomeRewardError: "§cUne erreur est survenue lors de l'ajout de la récompense"
+  actionBarWelcome: "§a[+] %player%"
+  actionBarQuit: "§c[-] %player%"
   
 antiSwear:
   enabled: true

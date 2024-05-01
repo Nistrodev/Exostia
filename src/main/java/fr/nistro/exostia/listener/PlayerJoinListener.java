@@ -11,8 +11,10 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import fr.nistro.exostia.Main;
 import fr.nistro.exostia.util.DatabaseUtil;
+import me.clip.placeholderapi.PlaceholderAPI;
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.ComponentBuilder;
 
 public class PlayerJoinListener implements Listener {
 	private static Player newPlayer;
@@ -20,16 +22,26 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
-        
+    	// Show a message above the action bar
+    	final Player player = event.getPlayer();
+    	
+    	PlayerJoinListener.sendActionBarToAllPlayers(PlaceholderAPI.setPlaceholders(player, Bukkit.getPluginManager().getPlugin("Exostia").getConfig().getString("messages.actionBarWelcome").replace("%player%", player.getName())));
+    	
         final UUID playerUUID = event.getPlayer().getUniqueId();
 
         if (!DatabaseUtil.getInstance().isPlayerRegistered(playerUUID)) {
-			event.setJoinMessage(Main.getPrefix() + (Bukkit.getPluginManager().getPlugin("Exostia").getConfig().getString("messages.welcome").replace("%player%", event.getPlayer().getName()).replace("%playerCount%", DatabaseUtil.getPlayersCount().toString())));
 			PlayerJoinListener.newPlayer = event.getPlayer();
 			PlayerJoinListener.firstJoin = new Date();
 			
             // Enregistrement du joueur dans la base de données
             DatabaseUtil.getInstance().registerPlayer(playerUUID);
+        }
+    }
+    
+    // Méthode pour envoyer un message au-dessus de la barre d'action à tous les joueurs
+    public static void sendActionBarToAllPlayers(String message) {
+        for (final Player player : Bukkit.getOnlinePlayers()) {
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(message).create());
         }
     }
 	
