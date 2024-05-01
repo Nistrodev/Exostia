@@ -73,6 +73,31 @@ messages:
   cantWelcomeYourself: "§cVous ne pouvez pas vous accueillir vous-même"
   welcomeReward: "§aVous avez reçu %reward% pour avoir accueilli %player%"
   welcomeRewardError: "§cUne erreur est survenue lors de l'ajout de la récompense"
+  
+antiSwear:
+  enabled: true
+  replacementPhrases:
+  - "§eTu es incroyablement talentueux !"
+  - "§eQue la joie t'accompagne !"
+  - "§eTu es une personne merveilleuse !"
+  - "§eJe te souhaite une journée radieuse !"
+  - "§eMerci d'être si gentil(le) !"
+  - "§eTa positivité est contagieuse !"
+  - "§eTu es une source d'inspiration pour nous tous !"
+  - "§eQue ta journée soit aussi belle que toi !"
+  - "§eTu fais briller le monde de ta présence !"
+  - "§eTon sourire illumine ma journée !"
+  - "§eTu as un cœur en or !"
+  - "§eQue tous tes rêves se réalisent !"
+  - "§eTu es un rayon de soleil dans ma vie !"
+  - "§eLa vie est plus belle grâce à toi !"
+  - "§eTu es une étoile qui brille dans le ciel !"
+  - "§eTon amabilité est très appréciée !"
+  - "§eJe suis reconnaissant(e) de te connaître !"
+  - "§eTes actions inspirent les autres autour de toi !"
+  - "§eMerci d'être une si belle âme !"
+  - "§eTon optimisme est inspirant !"
+  - "§eTu es un exemple de bonté pour nous tous !"
 
 permissions:
   welcome: "exostia.welcome"

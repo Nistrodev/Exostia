@@ -1,5 +1,5 @@
 name: Exostia
-version: 1.0.2
+version: 1.0.3
 author: Nistro
 description: Main plugin for Exostia server.
 main: fr.nistro.exostia.Main

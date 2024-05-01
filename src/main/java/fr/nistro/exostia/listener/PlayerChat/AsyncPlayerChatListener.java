@@ -1,4 +1,4 @@
-package fr.nistro.exostia.listener;
+package fr.nistro.exostia.listener.PlayerChat;
 
 import java.awt.Color;
 import java.lang.reflect.InvocationTargetException;
@@ -58,8 +58,10 @@ public class AsyncPlayerChatListener implements Listener {
         messageToSend.addExtra(prefixPlayer);
         messageToSend.addExtra(player.getName());
         messageToSend.addExtra(Bukkit.getPluginManager().getPlugin("Exostia").getConfig().getString("messages.symbolBeforeMessage"));
+
+        message = AntiSwear.checkSwearWords(message);
         
-     // Vérifie si le message contient [i]
+        // Vérifie si le message contient [i]
         if (message.contains("[i]")) {
             // Trouve l'index de [i] dans le message
             final int index = message.indexOf("[i]");
