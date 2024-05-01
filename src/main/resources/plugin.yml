@@ -11,3 +11,7 @@ commands:
     usage: /chat <clear|toggle>
     aliases: [c]
     permission: exostia.chat
+  welcome:
+    description: Welcome player and get a reward.
+    usage: /welcome
+    aliases: [b, bienvenue, bvn]

@@ -1,18 +1,29 @@
 # Exostia - Configuration
 prefix: §6[§eExostia§6] §r
 
+#MySQL
+database:
+  host: "localhost"
+  port: 3306
+  database: "exostiadb"
+  username: "root"
+  password: ""
+
 # Discord Webhook
-webhookURL: "https://discord.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz1234567890"
+webhookURL: "https://discord.com/api/webhooks/1235166619232112671/zIUozwi2qLghBunh3vtnAVuiidb_P1ERT4IKJUJ1IsA_KKSsfPERXFGatEuGH9BnOxto"
+
+# Join / Leave
+maxTimeToWelcome: 60
 
 permission_prefix:
   Admin:
     permission: "exostia.admin"
     prefix: "§c[Admin] "
   Moderator:
-    permission: "exostia.moderator"
-    prefix: "§2[Moderateur] "
+      permission: "exostia.moderator"
+      prefix: "§2[Moderateur] "
   Default:
-    prefix: "§7[Joueur] "
+      prefix: "§7[Joueur] "
       
 # Report
 report:
@@ -25,12 +36,12 @@ report:
   usage: "§cUtilisation: /report <joueur> <message>"
   embed:
     username: "Exostia Report"
-    logo: "https://example.com/logo.jpg"
+    logo: "https://media.discordapp.net/attachments/1235179661319733311/1235180139986292757/exostia.jpg?ex=66336ea5§is=66321d25§hm=5bfcd6fbff32ac2678bf4046a89d8de60eeeb18dee9352e7ce6fd80f0183e60d§=§format=webp§width=701§height=701"
     title: "Nouveau report"
     player: "Joueur"
     target: "Cible"
     message: "Message"
-    thumbnail: "https://example.com/thumbnail.png"
+    thumbnail: "https://media.discordapp.net/attachments/1235179661319733311/1235179708535275520/istockphoto-1152189152-612x612-removebg-preview.png?ex=66336e3f§is=66321cbf§hm=9231c3e95ba736739f8b0da9bcdb534a1b38979661104bd28b69be74838c2d36§=§format=webp§quality=lossless§width=550§height=550"
     footer: "Exostia Report"
     timezone: "UTC"
 
@@ -46,7 +57,26 @@ messages:
   chatUsage: "§cUtilisation: /chat <clear|toggle>"
   chatDisabled: "§cLe chat a été désactivé par %player%"
   chatEnabled: "§aLe chat a été activé par %player%"
-  
+  welcome: "§aBienvenue sur le serveur %player%, tu es le joueur n°%playerCount% \n §7Souhaitez lui la bienvenue avec §a/bienvenue"
+  welcomeMessages:
+    - "§7Salut §a%player%§7! Nous sommes ravis de te voir ici."
+    - "§7Bonjour §a%player%§7! Prépare-toi à vivre une expérience incroyable sur notre serveur."
+    - "§7Bienvenue sur notre serveur, §a%player%§7! Amuse-toi bien !"
+    - "§7Salut §a%player%§7! Nous espérons que tu passeras un bon moment parmi nous."
+    - "§7Bonjour §a%player%§7! N'hésite pas à poser des questions si tu en as besoin, la communauté est là pour t'aider."
+    - "§7Hey §a%player%§7! Prépare-toi à découvrir un univers rempli de surprises !"
+    - "§7Bienvenue, §a%player%§7! Nous sommes heureux de te voir parmi nous."
+    - "§7Salut §a%player%§7! Prépare-toi à vivre des aventures épiques dans notre monde !"
+    - "§7Bonjour §a%player%§7! N'oublie pas de lire les règles et de les respecter. Amuse-toi bien !"
+    - "§7Hey §a%player%§7! Nous espérons que tu te sentiras comme chez toi sur notre serveur."
+    - "§7Bienvenue à bord, §a%player%§7! Que l'aventure commence !"
+    - "§7Salut §a%player%§7! Nous espérons que tu te feras de nouveaux amis ici."
+    - "§7Bonjour §a%player%§7! N'oublie pas de voter pour le serveur si tu t'amuses bien !"
+    - "§7Hey §a%player%§7! N'hésite pas à nous faire part de tes suggestions pour améliorer le serveur."
+  noNewPlayer: "§cIl n'y a pas de nouveaux joueurs à accueillir"
+  tooLateToWelcome: "§cTrop tard pour accueillir %player%"
+  cantWelcomeYourself: "§cVous ne pouvez pas vous accueillir vous-même"
+
 permissions:
   clear: "exostia.chat.clear"
   toggle: "exostia.chat.toggle"

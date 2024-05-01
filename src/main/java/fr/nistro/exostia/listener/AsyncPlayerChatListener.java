@@ -75,7 +75,6 @@ public class AsyncPlayerChatListener implements Listener {
         messageToSend.addExtra(Bukkit.getPluginManager().getPlugin("Exostia").getConfig().getString("messages.symbolBeforeMessage"));
         
      // Vérifie si le message contient [i]
-     // Vérifie si le message contient [i]
         if (message.contains("[i]")) {
             // Trouve l'index de [i] dans le message
             final int index = message.indexOf("[i]");
