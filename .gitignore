@@ -1,0 +1,7 @@
+
+.settings
+src\test
+target
+.classpath
+.project
+pom.xml
