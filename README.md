@@ -16,6 +16,9 @@ Exostia is a main plugin for the Exostia server.
 - Color in chat supported
 
   ![image](https://github.com/Nistrodev/CustomName/assets/109731762/305eaceb-a3b3-4ca2-a6c8-5decd76b8321)
+- AntiSwear with phrases replacement
+
+  ![image](https://github.com/Nistrodev/Exostia/assets/109731762/67415673-90f8-492a-886c-040d035015ca)
 
 
 ## Installation
