@@ -1,0 +1,53 @@
+# Exostia - Configuration
+prefix: §6[§eExostia§6] §r
+
+# Discord Webhook
+webhookURL: "https://discord.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz1234567890"
+
+permission_prefix:
+  Admin:
+    permission: "exostia.admin"
+    prefix: "§c[Admin] "
+  Moderator:
+    permission: "exostia.moderator"
+    prefix: "§2[Moderateur] "
+  Default:
+    prefix: "§7[Joueur] "
+      
+# Report
+report:
+  prefix: "§6[§eExostia§4Report§6] §r"
+  symbol: "§c[!] §r"
+  hoverText: "§cCliquez pour reporter le message"
+  cantReportYourself: "§cVous ne pouvez pas vous reporter vous-même"
+  reportSent: "§aVotre report a bien été envoyé"
+  playerNotFound: "§cJoueur introuvable"
+  usage: "§cUtilisation: /report <joueur> <message>"
+  embed:
+    username: "Exostia Report"
+    logo: "https://example.com/logo.jpg"
+    title: "Nouveau report"
+    player: "Joueur"
+    target: "Cible"
+    message: "Message"
+    thumbnail: "https://example.com/thumbnail.png"
+    footer: "Exostia Report"
+    timezone: "UTC"
+
+# Messages
+messages:
+  noPermission: "§cVous n'avez pas la permission d'effectuer cette commande"
+  noConsole: "§cVous ne pouvez pas effectuer cette commande en console"
+  hoverTextResponse: "§aCliquez pour répondre à %player%"
+  symbolBeforeMessage: "§r > "
+  noItemInHand: "§cVous devez tenir un item en main"
+  itemSymbol: "§f» §e%itemName% §fx§e%itemAmount% §f«"
+  chatCleared: "§aLe chat a été nettoyé par %player%"
+  chatUsage: "§cUtilisation: /chat <clear|toggle>"
+  chatDisabled: "§cLe chat a été désactivé par %player%"
+  chatEnabled: "§aLe chat a été activé par %player%"
+  
+permissions:
+  clear: "exostia.chat.clear"
+  toggle: "exostia.chat.toggle"
+  chatBypass: "exostia.chat.bypass"

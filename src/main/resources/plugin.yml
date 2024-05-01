@@ -1,0 +1,13 @@
+name: Exostia
+version: 1.0.0
+author: Nistro
+description: Main plugin for Exostia server.
+main: fr.nistro.exostia.Main
+api: INVALID
+
+commands:
+  chat:
+    description: Manage chat by clearing it or toggling it.
+    usage: /chat <clear|toggle>
+    aliases: [c]
+    permission: exostia.chat
