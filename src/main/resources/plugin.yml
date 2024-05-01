@@ -4,6 +4,7 @@ author: Nistro
 description: Main plugin for Exostia server.
 main: fr.nistro.exostia.Main
 api: INVALID
+depend: [Vault]
 
 commands:
   chat:
@@ -15,3 +16,4 @@ commands:
     description: Welcome player and get a reward.
     usage: /welcome
     aliases: [b, bienvenue, bvn]
+    
